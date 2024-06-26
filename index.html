@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Holy Empire News - Divine Updates for the Faithful</title>
     <style>
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+        @keyframes shimmer {
+            0% { background-position: -1000px 0; }
+            100% { background-position: 1000px 0; }
         }
         @keyframes float {
             0% { transform: translateY(0px); }
@@ -15,102 +15,153 @@
             100% { transform: translateY(0px); }
         }
         body {
-            font-family: 'Cinzel', serif;
-            background-color: #f9f4e1;
-            color: #3a3a3a;
+            font-family: 'Cormorant Garamond', serif;
+            background-color: #1a0f0d;
+            color: #e0d0c0;
             margin: 0;
             padding: 0;
-            background-image: url('images/parchment-bg.jpg');
+            background-image: url('images/stars-bg.png');
             background-attachment: fixed;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
         }
         header {
             text-align: center;
-            background-color: rgba(139, 69, 19, 0.8);
-            padding: 20px 0;
-            border-bottom: 3px solid #4a2c2a;
+            background: linear-gradient(45deg, #4a2c2a, #8b4513);
+            padding: 40px 0;
             position: relative;
             overflow: hidden;
         }
-        header::before, header::after {
+        header::before {
             content: "";
             position: absolute;
-            width: 200px;
-            height: 200px;
-            background-image: url('images/holy-symbol.png');
-            background-size: contain;
-            opacity: 0.2;
-            animation: float 6s infinite ease-in-out;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background-image: linear-gradient(
+                to right, 
+                rgba(255,215,0,0) 0%,
+                rgba(255,215,0,0.13) 50%,
+                rgba(255,215,0,0) 100%
+            );
+            animation: shimmer 4s infinite;
+            transform: rotate(30deg);
         }
-        header::before {
-            left: -100px;
-            top: -100px;
-        }
-        header::after {
-            right: -100px;
-            bottom: -100px;
-        }
-        header h1 {
+        h1 {
+            font-size: 3.5em;
             margin: 0;
-            font-size: 3em;
             color: #ffd700;
-            text-shadow: 2px 2px 4px #000;
-            animation: fadeIn 2s;
-        }
-        header .subtitle {
-            font-size: 1.2em;
-            color: #f1e3bc;
-            animation: fadeIn 3s;
-        }
-        section {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: rgba(255, 255, 255, 0.9);
-            box-shadow: 0 0 15px rgba(0,0,0,0.2);
-            border-radius: 10px;
+            text-shadow: 0 0 10px #ffd700, 0 0 20px #ffd700, 0 0 30px #ffd700;
             position: relative;
         }
-        section::before {
-            content: "";
-            position: absolute;
-            top: -30px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 60px;
-            background-image: url('images/holy-emblem.png');
+        .subtitle {
+            font-size: 1.4em;
+            color: #f1e3bc;
+            margin-top: 10px;
+        }
+        .divine-symbol {
+            width: 100px;
+            height: 100px;
+            background-image: url('images/divine-symbol.png');
             background-size: contain;
-            animation: float 4s infinite ease-in-out;
+            margin: 20px auto;
+            animation: float 6s infinite ease-in-out;
         }
-        .article img {
+        .news-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+        }
+        .news-page {
+            flex: 1;
+            margin: 0 10px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .news-page:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(255, 215, 0, 0.3);
+        }
+        .news-page img {
             width: 100%;
-            margin-bottom: 20px;
-            border: 2px solid #4a2c2a;
-            border-radius: 5px;
-            transition: transform 0.3s ease;
-        }
-        .article img:hover {
-            transform: scale(1.02);
-        }
-        footer {
-            text-align: center;
-            margin: 20px 0;
-            font-size: 1em;
-            color: #4a2c2a;
-            animation: fadeIn 4s;
+            display: block;
         }
         .divine-quote {
             font-style: italic;
             text-align: center;
-            color: #8b4513;
-            margin: 20px 0;
+            color: #ffd700;
+            margin: 40px 0;
+            font-size: 1.5em;
             position: relative;
             padding: 20px;
-            animation: fadeIn 5s;
         }
         .divine-quote::before, .divine-quote::after {
             content: '"';
             font-size: 4em;
+            position: absolute;
+            opacity: 0.2;
+            color: #8b4513;
+        }
+        .divine-quote::before {
+            top: -20px;
+            left: 0;
+        }
+        .divine-quote::after {
+            bottom: -60px;
+            right: 0;
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            background: linear-gradient(45deg, #4a2c2a, #8b4513);
+            color: #f1e3bc;
+        }
+        .holy-fire {
+            width: 20px;
+            height: 20px;
+            background-image: url('images/holy-fire.gif');
+            background-size: contain;
+            display: inline-block;
+            margin: 0 10px;
+            vertical-align: middle;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>The Holy Empire News</h1>
+            <div class="subtitle">3th June 2024 | God Luminous Will Save Us</div>
+            <div class="divine-symbol"></div>
+        </div>
+    </header>
+    <main class="container">
+        <div class="divine-quote">"In the radiant embrace of God Luminous, we find eternal truth and salvation."</div>
+        <div class="news-container">
+            <div class="news-page">
+                <img src="images/page1.jpg" alt="Page 1 of The Holy Empire News">
+            </div>
+            <div class="news-page">
+                <img src="images/page2.jpg" alt="Page 2 of The Holy Empire News">
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <p><span class="holy-fire"></span>The next divine issue shall manifest in one moon's time<span class="holy-fire"></span></p>
+            <p>May the eternal light of God Luminous illuminate your path</p>
+        </div>
+    </footer>
+</body>
+</html>            font-size: 4em;
             position: absolute;
             opacity: 0.2;
         }
