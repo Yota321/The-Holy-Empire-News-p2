@@ -6,8 +6,10 @@ document.addEventListener("DOMContentLoaded", function() {
     function toggleMenu() {
         if (toggle.checked) {
             menu.classList.add("show");
+            hamburger.classList.add("open");
         } else {
             menu.classList.remove("show");
+            hamburger.classList.remove("open");
         }
     }
 
@@ -24,4 +26,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Optional: Animate hamburger lines
     hamburger.addEventListener("click", function() {
-        this.class
+        this.classList.toggle('open');
+    });
+});
