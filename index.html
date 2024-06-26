@@ -16,12 +16,23 @@
         }
         body {
             font-family: 'Cormorant Garamond', serif;
-            background-color: #1a0f0d;
             color: #e0d0c0;
             margin: 0;
             padding: 0;
             background-image: url('images/stars-bg.png');
             background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+        }
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: -1;
         }
         .container {
             max-width: 1200px;
@@ -30,7 +41,7 @@
         }
         header {
             text-align: center;
-            background: linear-gradient(45deg, #4a2c2a, #8b4513);
+            background: linear-gradient(45deg, rgba(74, 44, 42, 0.7), rgba(139, 69, 19, 0.7));
             padding: 40px 0;
             position: relative;
             overflow: hidden;
@@ -111,6 +122,57 @@
         .divine-quote::before {
             top: -20px;
             left: 0;
+        }
+        .divine-quote::after {
+            bottom: -60px;
+            right: 0;
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            background: linear-gradient(45deg, rgba(74, 44, 42, 0.7), rgba(139, 69, 19, 0.7));
+            color: #f1e3bc;
+        }
+        .holy-fire {
+            width: 20px;
+            height: 20px;
+            background-image: url('images/holy-fire.gif');
+            background-size: contain;
+            display: inline-block;
+            margin: 0 10px;
+            vertical-align: middle;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>The Holy Empire News</h1>
+            <div class="subtitle">3th June 2024 | God Luminous Will Save Us</div>
+            <div class="divine-symbol"></div>
+        </div>
+    </header>
+    <main class="container">
+        <div class="divine-quote">"In the radiant embrace of God Luminous, we find eternal truth and salvation."</div>
+        <div class="news-container">
+            <div class="news-page">
+                <img src="images/page1.jpg" alt="Page 1 of The Holy Empire News">
+            </div>
+            <div class="news-page">
+                <img src="images/page2.jpg" alt="Page 2 of The Holy Empire News">
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <p><span class="holy-fire"></span>The next divine issue shall manifest in one moon's time<span class="holy-fire"></span></p>
+            <p>May the eternal light of God Luminous illuminate your path</p>
+        </div>
+    </footer>
+</body>
+</html>            left: 0;
         }
         .divine-quote::after {
             bottom: -60px;
