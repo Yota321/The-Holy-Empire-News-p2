@@ -3,99 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Holy Empire News - Divine Updates for the Faithful</title>
+    <title>The Holy Empire News</title>
     <style>
         body {
             font-family: 'Georgia', serif;
-            color: #e0d0c0;
+            background-image: url('images/parchment-bg.jpg');
+            color: #333;
             margin: 0;
             padding: 0;
-            background-image: url('images/stars-bg.png');
-            background-attachment: fixed;
-            background-size: cover;
-            background-position: center;
         }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        header, footer {
-            background-color: rgba(74, 44, 42, 0.7);
+        header {
             text-align: center;
-            padding: 20px;
+            background-color: #f4f4f4;
+            padding: 20px 0;
+            border-bottom: 1px solid #ccc;
+            position: relative;
         }
-        h1 {
-            font-size: 2.5em;
-            color: #ffd700;
-            text-shadow: 0 0 5px #ffd700;
+        header h1 {
             margin: 0;
+            font-size: 2.5em;
         }
-        .subtitle {
+        header .subtitle {
             font-size: 1.2em;
-            color: #f1e3bc;
-            margin-top: 10px;
+            color: #555;
         }
-        .divine-symbol {
+        header img {
+            position: absolute;
+            top: 10px;
+        }
+        header .left-symbol {
+            left: 10px;
+        }
+        header .right-symbol {
+            right: 10px;
+        }
+        section {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .article img {
+            width: 100%;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+        }
+        footer {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 1em;
+            color: #777;
+        }
+        footer img {
             width: 50px;
             height: 50px;
-            background-image: url('images/holy-symbol.png');
-            background-size: contain;
-            margin: 10px auto;
-        }
-        .news-container {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 20px;
-        }
-        .news-page {
-            flex: 1;
-            margin: 0 10px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 5px;
-            overflow: hidden;
-        }
-        .news-page img {
-            width: 100%;
-            display: block;
-        }
-        .divine-quote {
-            font-style: italic;
-            text-align: center;
-            color: #ffd700;
-            margin: 20px 0;
-            font-size: 1.2em;
-            padding: 10px;
-        }
-        footer p {
-            margin: 5px 0;
         }
     </style>
 </head>
 <body>
     <header>
-        <div class="container">
-            <h1>The Holy Empire News</h1>
-            <div class="subtitle">27th June 2024 | God Luminous Will Save Us</div>
-            <div class="divine-symbol"></div>
-        </div>
+        <img src="images/holy-symbol.png" alt="Holy Symbol" class="left-symbol">
+        <h1>The Holy Empire News</h1>
+        <img src="images/divine-symbol.png" alt="Divine Symbol" class="right-symbol">
+        <div class="subtitle">3rd June 2024 | God Luminous Will Save Us</div>
     </header>
-    <main class="container">
-        <div class="divine-quote">"In the radiant embrace of God Luminous, we find eternal truth and salvation."</div>
-        <div class="news-container">
-            <div class="news-page">
-                <img src="images/page1.jpg" alt="Page 1 of The Holy Empire News">
-            </div>
-            <div class="news-page">
-                <img src="images/page2.jpg" alt="Page 2 of The Holy Empire News">
-            </div>
+    <section>
+        <div class="article">
+            <img src="images/page1.jpg" alt="Page 1 of The Holy Empire News">
+            <img src="images/page2.jpg" alt="Page 2 of The Holy Empire News">
         </div>
-    </main>
+    </section>
     <footer>
-        <div class="container">
-            <p>The next divine issue shall manifest in one moon's time</p>
-            <p>May the eternal light of God Luminous illuminate your path</p>
-        </div>
+        <p>You will get the next issue next month at the same place.</p>
+        <img src="images/holy-fire.gif" alt="Holy Fire">
     </footer>
 </body>
 </html>
